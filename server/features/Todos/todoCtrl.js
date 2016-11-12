@@ -49,15 +49,15 @@ module.exports = {
         });
     },
 
-    addAndEditNote(req, res) {
-      todo.findById(req.params.id, (err, todo) => {
-        todo.note.forEach( note => {
-          if(req.body.note._id === note._id){
-            note: req.body.note;
-          } else {
-            {$push: {'note': {note: req.body.note}}};
-          }
-        });
+    addNote(req, res) {
+      Todo.findByIdAndUpdate(req.params.id,
+        {$push: {'note': {note: req.body.note}}},
+        {safe: true, new : true},
+        (err, note) => {
+        if (err) {
+            return res.status(500).json(err);
+        }
+        return res.status(200).json(note);
       });
     }
 }
