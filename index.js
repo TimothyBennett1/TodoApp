@@ -15,6 +15,6 @@ mongoose.connect( mongoUri );
 mongoose.connection.once( 'open', () => console.log( `Connected to MongoDB at ${ mongoUri }` ) );
 
 
-// require('./server/masterRoutes')(app);
+require('./server/features/Todos/todoRoutes')(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
