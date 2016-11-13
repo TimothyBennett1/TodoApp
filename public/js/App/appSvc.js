@@ -4,7 +4,7 @@ angular.module('app')
       let baseUrl = 'http://localhost:4000';
 
       this.getTodos = () => {
-        return $http.get(baseUrl + '/api/todos').then((res) => {
+        return $http.get(baseUrl + '/api/todos/').then((res) => {
           return res.data;
         })
       },
@@ -15,14 +15,20 @@ angular.module('app')
         })
       },
 
-      this.makeTodo = () => {
-        return $http.post(baseUrl + '/api/todos').then((res) => {
+      this.makeTodo = (todo) => {
+        return $http.post(baseUrl + '/api/todos', todo).then((res) => {
           return res.data;
         })
       },
 
       this.editTodo = () => {
         return $http.put(baseUrl + '/api/todos/' + id).then((res) => {
+          return res.data;
+        })
+      },
+
+      this.addNote = (id, note) => {
+        return $http.put(baseUrl + '/api/todo/' + id, note).then((res) => {
           return res.data;
         })
       }

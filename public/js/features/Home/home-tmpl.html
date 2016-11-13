@@ -5,17 +5,20 @@
   </div>
   <div class="modal" id="modal">
     <span>What do you need to do?</span>
-    <input type="text">
+    <input type="text" ng-model="todo.todo">
     <div class="save-button">
-      <button>Save Note</button>
+      <button ng-click="addTodo(todo)">Save Todo</button>
     </div>
   </div>
   <div class="todos-container" ng-repeat="todo in todos">
     <div class="todo-card">
-      <span>{{todo.todo}}</span>
+      <h1>{{todo.todo}}</h1>
+      <div class="notes" ng-repeat="note in todo.notes">
+        <span>{{note}}</span>
+      </div>
       <div class="add-note">
-        <span>Add a note</span>
-        <i class="material-icons">add_circle_outline</i>
+        <input type="text" placeholder="Add a note" ng-model="todo.notes.note">
+        <button class="material-icons" ng-click="addNote({id: todo._id}, todo.notes.note)">add_circle_outline</button>
       </div>
     </div>
   </div>

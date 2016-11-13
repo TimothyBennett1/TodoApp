@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: hsla(46, 100%, 54%, 0.8);
 }
 
@@ -80,10 +80,22 @@ header.logo {
 .add-note {
   display: flex;
   align-items: center;
+  align-content: center;
 }
 
-.add-note i {
-  margin-left: 5px;
+.add-note input[type=text] {
+  border: 2px solid hsla(90, 1%, 31%, 1);
+  border-radius: 4px;
+  height: 4vh;
+}
+
+.add-note button {
+  margin-left: 10px;
+  color: hsla(145, 71%, 47%, 1);
+  padding: 0;
+  border-radius: 50%;
+  border-style: none;
+  background-color: hsla(0, 0%, 0%, 0);
 }
 
 footer {
