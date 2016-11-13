@@ -1,3 +1,22 @@
-<div>
-  
+<div class="container">
+  <div class="add-container">
+    <button ng-click="openModal()" ng-hide="open" class="material-icons">add</button>
+    <button ng-click="closeModal()" ng-show="open" id="close-modal" class="material-icons">clear</button>
+  </div>
+  <div class="modal" id="modal">
+    <span>What do you need to do?</span>
+    <input type="text">
+    <div class="save-button">
+      <button>Save Note</button>
+    </div>
+  </div>
+  <div class="todos-container" ng-repeat="todo in todos">
+    <div class="todo-card">
+      <span>{{todo.todo}}</span>
+      <div class="add-note">
+        <span>Add a note</span>
+        <i class="material-icons">add_circle_outline</i>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('todoCtrl', ($scope, $stateParams, devSvc) => {
+  .controller('todoCtrl', function($scope, $stateParams, devSvc) {
 
       $scope.getTodo = (id) => {
         devSvc.getOneTodo(id)

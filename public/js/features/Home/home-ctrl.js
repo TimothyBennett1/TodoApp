@@ -1,5 +1,15 @@
 angular.module('app')
-  .controller('homeCtrl', ($scope, appSvc, $stateParams) => {
+  .controller('homeCtrl', function($scope, appSvc, $stateParams) {
+
+    $scope.openModal = () => {
+      document.getElementById('modal').style.display = 'flex'
+      $scope.open = true;
+    };
+
+    $scope.closeModal = () => {
+      document.getElementById('modal').style.display = 'none'
+      $scope.open = false;      
+    }
 
     $scope.getTodos = () => {
       appSvc.getTodos()
@@ -7,7 +17,7 @@ angular.module('app')
           $scope.todos = results;
         })
     }
-    getTodos();
+    $scope.getTodos();
 
     $scope.addTodo = () => {
       appSvc.makeTodo()
