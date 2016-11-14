@@ -13,12 +13,13 @@
   <div class="todos-container" ng-repeat="todo in todos">
     <div class="todo-card">
       <h1>{{todo.todo}}</h1>
+      <h1>{{todo._id}}</h1>
       <div class="notes" ng-repeat="note in todo.notes">
         <span>{{note}}</span>
       </div>
       <div class="add-note">
-        <input type="text" placeholder="Add a note" ng-model="todo.notes.note">
-        <button class="material-icons" ng-click="addNote({id: todo._id}, todo.notes.note)">add_circle_outline</button>
+        <input type="text" placeholder="Add a note" ng-model="todo.note">
+        <button class="material-icons" ng-click="addNote(todo._id, todo.note)">add_circle_outline</button>
       </div>
     </div>
   </div>

@@ -10,6 +10,5 @@ module.exports = app => {
   app.post('/api/todos', todoCtrl.makeTodo);
 
   // Put
-  app.put('/api/todos/:id', todoCtrl.editTodo);
-  app.put('/api/todo/:id', todoCtrl.addNote);
+  app.put('/api/todos/:id', todoCtrl.addNote);
 }

@@ -9,7 +9,7 @@ angular.module('app')
         })
       },
 
-      this.getOneTodo = () => {
+      this.getOneTodo = (id) => {
         return $http.get(baseUrl + '/api/todos/' + id).then((res) => {
           return res.data;
         })
@@ -21,14 +21,14 @@ angular.module('app')
         })
       },
 
-      this.editTodo = () => {
-        return $http.put(baseUrl + '/api/todos/' + id).then((res) => {
-          return res.data;
-        })
-      },
+      // this.editTodo = () => {
+      //   return $http.put(baseUrl + '/api/todos/' + id).then((res) => {
+      //     return res.data;
+      //   })
+      // },
 
       this.addNote = (id, note) => {
-        return $http.put(baseUrl + '/api/todo/' + id, note).then((res) => {
+        return $http.put(baseUrl + '/api/todos/' + id, note).then((res) => {
           return res.data;
         })
       }

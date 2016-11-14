@@ -11,6 +11,8 @@ angular.module('app')
       $scope.open = false;
     }
 
+    console.log($stateParams);
+
     $scope.getTodos = () => {
       appSvc.getTodos()
         .then((results) => {
@@ -26,13 +28,15 @@ angular.module('app')
       appSvc.makeTodo(todo)
         .then((todo) => {
           $scope.todo = {};
+          $scope.getTodos();
         })
     }
 
     $scope.addNote = (id, note) => {
-      appSvc.addNote(note)
+      appSvc.addNote(id, note)
         .then((note) => {
-          $scope.todo.notes.note = {};
+          $scope.note = {};
+          $scope.getTodos();
         })
     }
 

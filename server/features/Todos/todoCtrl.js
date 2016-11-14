@@ -23,7 +23,8 @@ module.exports = {
     },
 
     makeTodo(req, res) {
-        Todo.create(req.body).save((err, todo) => {
+        new Todo(req.body).save((err, todo) => {
+          console.log(err);
             if (err) {
                 return res.status(500).json(err);
             }
