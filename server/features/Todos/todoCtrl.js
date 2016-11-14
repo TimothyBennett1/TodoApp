@@ -52,7 +52,7 @@ module.exports = {
 
     addNote(req, res) {
       Todo.findByIdAndUpdate(req.params.id,
-        {$push: {'note': {note: req.body.note}}},
+        {$push: {'notes': req.body}},
         {safe: true, new : true},
         (err, note) => {
         if (err) {

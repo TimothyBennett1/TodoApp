@@ -11,13 +11,14 @@ angular.module('app')
       $scope.open = false;
     }
 
-    console.log($stateParams);
+    $scope.scratchOut = () => {
+      document.getElementById('scratch').style.textDecoration = 'line-through'
+    }
 
     $scope.getTodos = () => {
       appSvc.getTodos()
         .then((results) => {
           $scope.todos = results;
-          console.log($scope.todos);
         })
     }
     $scope.getTodos();
@@ -29,13 +30,14 @@ angular.module('app')
         .then((todo) => {
           $scope.todo = {};
           $scope.getTodos();
+          $scope.closeModal();
         })
     }
 
     $scope.addNote = (id, note) => {
       appSvc.addNote(id, note)
         .then((note) => {
-          $scope.note = {};
+          $scope.notes = {};
           $scope.getTodos();
         })
     }

@@ -67,6 +67,7 @@ header.logo {
   border: 2px solid hsla(90, 1%, 31%, 1);
   border-radius: 4px;
   height: 4vh;
+  padding-left: 5px;
 }
 
 .save-button button {
@@ -75,6 +76,27 @@ header.logo {
   padding: 7px 11px;
   background-color: hsla(145, 71%, 47%, 1);
   color: hsla(71, 59%, 89%, 1);
+}
+
+.todo-card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 150px;
+}
+
+.notes {
+  display: flex;
+  align-items: center;
+}
+
+.notes button { 
+  margin-left: 10px;
+  color: hsla(14, 77%, 54%, 1);
+  padding: 0;
+  border-radius: 50%;
+  border-style: none;
+  background-color: hsla(0, 0%, 0%, 0);
 }
 
 .add-note {
@@ -87,6 +109,7 @@ header.logo {
   border: 2px solid hsla(90, 1%, 31%, 1);
   border-radius: 4px;
   height: 4vh;
+  padding-left: 5px;
 }
 
 .add-note button {

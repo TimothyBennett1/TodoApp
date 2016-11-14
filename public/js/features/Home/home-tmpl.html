@@ -7,19 +7,19 @@
     <span>What do you need to do?</span>
     <input type="text" ng-model="todo.todo">
     <div class="save-button">
-      <button ng-click="addTodo(todo)">Save Todo</button>
+      <button ng-click="addTodo(todo)" ng-show="open">Save Todo</button>
     </div>
   </div>
   <div class="todos-container" ng-repeat="todo in todos">
     <div class="todo-card">
-      <h1>{{todo.todo}}</h1>
-      <h1>{{todo._id}}</h1>
+      <h2>{{todo.todo}}</h2>
       <div class="notes" ng-repeat="note in todo.notes">
-        <span>{{note}}</span>
+        <span id="scratch" ng-hide="done">{{note.note}}</span>
+        <button class="material-icons" ng-click="scratchOut()">clear</button>
       </div>
       <div class="add-note">
         <input type="text" placeholder="Add a note" ng-model="todo.note">
-        <button class="material-icons" ng-click="addNote(todo._id, todo.note)">add_circle_outline</button>
+        <button class="material-icons" ng-click="addNote(todo._id, {note: todo.note})">add_circle_outline</button>
       </div>
     </div>
   </div>

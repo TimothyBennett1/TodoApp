@@ -28,6 +28,7 @@ angular.module('app')
       // },
 
       this.addNote = (id, note) => {
+        console.log(note);
         return $http.put(baseUrl + '/api/todos/' + id, note).then((res) => {
           return res.data;
         })
