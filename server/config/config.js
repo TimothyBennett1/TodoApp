@@ -3,5 +3,6 @@ module.exports = {
         secret: 'fluffybunnyunicornmasterabstract',
         resave: false,
         saveUninitialized: false
-    }
+    },
+    port: 80
 };
